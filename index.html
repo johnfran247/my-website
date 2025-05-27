@@ -2,74 +2,304 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BIG4L Clothing</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #000;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 12px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #25D366;
+    }
+    .hero {
+      background: linear-gradient(to right, #000000, #1a1a1a);
+      color: #25D366;
+      padding: 100px 20px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-text {
+      max-width: 700px;
+      margin: 0 auto;
+      animation: fadeSlide 8s ease-in-out infinite;
+    }
+    .hero-text h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 0.3em;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #25D366;
+      text-shadow: 0 0 10px rgba(37, 211, 102, 0.8);
+    }
+    .hero-text h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 0.5em;
+      color: #fff;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #ccc;
+      line-height: 1.5;
+      margin-bottom: 1.5em;
+      font-weight: 400;
+    }
+    @keyframes fadeSlide {
+      0%, 100% { opacity: 0; transform: translateY(20px); }
+      10%, 40% { opacity: 1; transform: translateY(0); }
+      60%, 90% { opacity: 0; transform: translateY(-20px); }
+    }
+    .hero .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      background-color: #25D366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.7);
+      transition: background-color 0.3s ease;
+    }
+    .hero .btn:hover {
+      background-color: #1ebe55;
+    }
+
+    h2.section-title {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 2rem;
+      color: #111;
+      font-weight: 700;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 50px 20px;
+      background-color: #fff;
+    }
+    .product {
+      background-color: #f2f2f2;
+      border-radius: 10px;
+      margin: 20px;
+      padding: 20px;
+      text-align: center;
+      width: 260px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .product:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .product img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      height: 180px;
+    }
+    .product h3 {
+      margin: 12px 0 8px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #222;
+    }
+    .product p {
+      color: #25D366;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+    .product button {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    .product button:hover {
+      background-color: #1ebe55;
+    }
+
+    .about {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 0 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.07);
+      text-align: center;
+    }
+    .about h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #111;
+      font-weight: 700;
+    }
+    .about p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    #contact {
+      background: #25D366;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    #contact h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    #contact p {
+      font-size: 1.1rem;
+      margin: 8px 0;
+    }
+    #contact a {
+      color: white;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+    #contact a:hover {
+      color: #d4f3d5;
+    }
+
+    .cart-count {
+      background: red;
+      color: white;
+      border-radius: 50%;
+      padding: 3px 8px;
+      font-size: 14px;
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: background-color 0.3s ease;
+    }
+    .whatsapp-float:hover {
+      background-color: #1ebe55;
+    }
+  </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav>
-    <div class="logo">BIG4L</div>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Shop</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
 
-  <!-- Hero Section -->
   <header>
-</section>
-<h1>Welcome to BIG4L Clothing Brand</h1>
-<H3><p><b></b>WE ARE BIG FOR LIFE</b></p></H3>
-</header>
-    <!-- Shop Section -->
-<section class="shop">
-    <h2>Shop Our Collection</h2>
-    <div class="products">
-      <div class="product">
-        <img src="https://via.placeholder.com/200x250" alt="T-shirt">
-        <h3>BIG4L ZIPPER</h3>
-        <p>#24,999</p>
-        <button>Buy Now</button>
-      </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x250" alt="Hoodie">
-        <h3>BIG4L VEST</h3>
-        <p>#7,999</p>
-        <button>Buy Now</button>
-      </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x250" alt="Cap">
-        <h3>BIG4L Cap</h3>
-        <p>#6,999</p>
-        <button>Buy Now</button>
-      </div>
+    <h1>BIG4L CLOTHING BRAND AND ACCESSORIES</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#products">Shop</a>
+      <a href="#" onclick="goToCart()">Cart <span id="cartCount" class="cart-count">0</span></a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>WELCOME TO BIG4L BUMPA SHOP</h1>
+      <h2>AESTHEIC WEARS THAT DEFINE YOU!!!</h2>
+      <p>Explore premium urban fashion designed for bold statements and everyday confidence.</p>
     </div>
-<!-- About Section -->
-<section class="about">
-    <h2>About BIG4L</h2>
-    <p>BIG4L is more than a clothing brand — it's a lifestyle. Born out of passion and designed for those who live boldly, every piece tells a story of identity, hustle, and pride.</p>
+    <a href="#products" class="btn">Shop Now</a>
   </section>
 
+  <h2 class="section-title">Featured Products</h2>
+  <section id="products" class="products">
+    <div class="product">
+      <img src="https://source.unsplash.com/featured/?hoodie" alt="Classic Vest" />
+      <h3>Classic Vest</h3>
+      <p>₦8,000</p>
+      <button onclick="addToCart('Classic Vest')">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://source.unsplash.com/featured/?zipper" alt="Classic Zipper" />
+      <h3>Classic Zipper</h3>
+      <p>₦24,999</p>
+      <button onclick="addToCart('Classic Zipper')">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://source.unsplash.com/featured/?cap" alt="BIG4L Cap" />
+      <h3>BIG4L Cap</h3>
+      <p>₦7,999</p>
+      <button onclick="addToCart('BIG4L Cap')">Add to Cart</button>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>
+      BIG4L Clothing is more than just fashion — it’s a culture. We deliver authentic streetwear rooted in boldness, originality, and quality. Our mission is to empower you to express your true self with premium designs that stand out every day.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Phone: <a href="tel:+2349131580579">+234 913 158 0579</a></p>
+    <p>Email: <a href="mailto:info@big4lclothing.com">info@big4lclothing.com</a></p>
+    <p>
+      Follow us on social media:
+      <br />
+      <a href="https://www.instagram.com/bigforlife_official?igsh=MTlseTlzZzBieHhneA==" target="_blank" rel="noopener noreferrer">Instagram</a> |
+      <a href="https://www.facebook.com/profile.php?id=61563803804109" target="_blank" rel="noopener noreferrer">Facebook</a>
+    </p>
+  </section>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/2349131580579" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
   <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Contact Info</title>
-</head>
-<body>
-  <h2>Contact Me</h2>
-  <p>Phone: <a href="tel:+2349131580579">+234 913 158 0579</a></p>
-  
-  <p>Follow<h5><b>BIG4L</b></h5>on social media:</p>
-  <ul>
-    <li><a href="https://www.instagram.com/bigforlife_official?igsh=MTlseTlzZzBieHhneA==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-    <li><a href="https://www.facebook.com/profile.php?id=61563803804109" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-  </ul>
 </body>
 </html>

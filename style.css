@@ -1,136 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f4f4f4;
-    padding: 0;
-  }
-  
-  nav {
-    background-color: #111;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    align-items: center;
-  }
-  
-  nav .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  nav ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  header {
-    text-align: center;
-    margin-top: 5rem;
-  }
-  .shop {
-    padding: 2rem;
-    background-color: #fff;
-    text-align: center;
-  }
-  
-  .shop h2 {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-  }
-  
-  .products {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  
-  .product {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 1rem;
-    width: 200px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  }
-  
-  .product img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  .product h3 {
-    margin: 0.5rem 0;
-  }
-  
-  .product p {
-    color: #333;
-    font-weight: bold;
-  }
-  
-  .product button {
-    background-color: #111;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    margin-top: 0.5rem;
-    border-radius: 5px;
-  }
-  
-  .product button:hover {
-    background-color: #444;
-  }
-  .about {
-    padding: 2rem;
-    background-color: #eee;
-    text-align: center;
-  }
-  
-  .about h2 {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-  }
-  
-  .about p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    max-width: 700px;
-    margin: auto;
-    color: #333;
-  }
-  .about-img {
-    width: 200px;
-    border-radius: 50%;
-    margin-top: 1rem;
-  }
-  <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Contact Info</title>
-</head>
-<body>
-  <h2>Contact Me</h2>
-  <p>Phone: <a href="tel:+2349131580579">+234 913 158 0579</a></p>
-  
-  <p>Follow me on social media:</p>
-  <ul>
-    <li><a href="https://www.instagram.com/bigforlife_official?igsh=MTlseTlzZzBieHhneA==" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-    <li><a href="https://www.facebook.com/profile.php?id=61563803804109" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-  </ul>
-</body>
-</html>
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+header {
+  background-color: #0f0f0f;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.slide-in {
+  animation: slideIn 1s ease-out;
+  position: relative;
+}
+
+@keyframes fadeSlide {
+  0%, 5%    { opacity: 0; transform: translateY(20px); }
+  10%, 45%  { opacity: 1; transform: translateY(0); }
+  55%, 65%  { opacity: 0; transform: translateY(-20px); }
+  70%, 100% { opacity: 1; transform: translateY(0); }
+}
+}
+header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff4500;
+}
+
+.hero {
+  padding: 6rem 2rem;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://source.unsplash.com/featured/?fashion,streetwear') center/cover no-repeat;
+  color: #fff;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.btn {
+  background-color: #ff4500;
+  padding: 0.9rem 2rem;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #e03e00;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 3rem 0 1rem;
+  color: #222;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.product {
+  background: white;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.product h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.product p {
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.about, .contact {
+  padding: 3rem 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.about h2, .contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about p, .contact p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.cart-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #00c851;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  display: none;
+  z-index: 10000;
+}
+
+footer {
+  background: #0f0f0f;
+  color: #fff;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
+}
